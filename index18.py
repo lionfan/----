@@ -4,7 +4,8 @@
 # index17.py を改良し、プログレスバー表示と初期状態での「作品は以上です。」非表示化
 
 import os, sys, io, re, cgi, cgitb, zipfile, posixpath, base64, subprocess, shutil, tempfile
-cgitb.enable()
+if os.environ.get("DEBUG") == "1":
+    cgitb.enable()
 sys.stdout.write("Content-Type: text/html; charset=utf-8\r\n\r\n")
 
 # ===== 設定 =====
